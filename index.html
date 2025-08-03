@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry, My Love 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: radial-gradient(circle at 20% 20%, #0b1d35, #000);
+      overflow-x: hidden;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      animation: floatText 3s ease-in-out infinite;
+      z-index: 2;
+      position: relative;
+    }
+
+    @keyframes floatText {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-10px);}
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      line-height: 1.6em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 2s ease-in forwards;
+      z-index: 2;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .heart {
+      font-size: 3em;
+      color: #ff6b81;
+      animation: heartbeat 1.5s infinite;
+      z-index: 2;
+      position: relative;
+    }
+
+    @keyframes heartbeat {
+      0% {transform: scale(1);}
+      25% {transform: scale(1.2);}
+      50% {transform: scale(1);}
+      75% {transform: scale(1.2);}
+      100% {transform: scale(1);}
+    }
+
+    .button, .forgive-btn {
+      margin-top: 20px;
+      background-color: #fff;
+      color: #f67280;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      animation: fadeIn 3s ease-in forwards;
+      display: inline-block;
+      z-index: 2;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .button:hover, .forgive-btn:hover {
+      background-color: #f67280;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .download {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: white;
+      opacity: 0.8;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {opacity: 0.3;}
+      50% {opacity: 1;}
+    }
+
+    .moon {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg') no-repeat center center;
+      background-size: cover;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.2);
+      z-index: 1;
+    }
+
+    .clouds {
+      background: url('https://www.transparenttextures.com/patterns/clouds.png');
+      background-size: cover;
+      animation: cloudmove 100s linear infinite;
+      opacity: 0.2;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    @keyframes cloudmove {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 0; }
+    }
+
+    .bubbles, .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .bubble, .floating-heart {
+      position: absolute;
+      border-radius: 50%;
+      animation: floatUp 15s linear infinite;
+      opacity: 0.3;
+    }
+
+    .bubble {
+      background: rgba(255, 255, 255, 0.2);
+      width: 15px;
+      height: 15px;
+    }
+
+    .floating-heart {
+      color: pink;
+      font-size: 20px;
+      animation: floatHeart 8s ease-in infinite;
+    }
+
+    @keyframes floatUp {
+      from {transform: translateY(100vh);}
+      to {transform: translateY(-10vh);}
+    }
+
+    @keyframes floatHeart {
+      0% {transform: translateY(0) rotate(0deg);}
+      100% {transform: translateY(-100vh) rotate(360deg);}
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 30px;
+      animation: fadeIn 2s forwards;
+    }
+
+    .hidden-message img {
+      width: 120px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      p { font-size: 1em; }
+      .button, .forgive-btn { padding: 12px 25px; font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="moon"></div>
+  <div class="clouds"></div>
+  <div class="bubbles" id="bubbles"></div>
+  <div class="hearts" id="hearts"></div>
+
+  <h1>I'm Truly Sorry hoodo 💔</h1>
+  <div class="heart">❤️</div>
+  <p>
+    My love, I never meant to hurt you. If I could take back what happened, I would do it in a heartbeat.<br>
+    You mean the world to me, and every moment without your smile feels empty.<br>
+    Please forgive me. Let me make it right again.
+  </p>
+
+  <!-- Replace 'letter.pdf' with the actual file name you include in your project folder -->
+  <a href="Sorry bubu.pdf" download class="button">Download 💌</a>
+  <div class="download">( bubu its letter from me)</div>
+
+  <br><br>
+  <button class="forgive-btn" onclick="showLove()">Forgive Me 💗</button>
+
+  <div class="hidden-message" id="hiddenMsg">
+    <div class="heart" style="font-size: 4em; animation: heartbeat 2s infinite;">💖</div>
+    <p style="font-style: italic; font-size: 1.2em;">Thank you, my love. I promise to treasure your heart forever.</p>
+    <img src="bubu.jpg" alt="us">
+  </div>
+
+  
+</body>
+</html>
